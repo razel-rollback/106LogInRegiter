@@ -107,12 +107,14 @@ class _RegisterPageState extends State<RegisterPage> {
               lastDate: DateTime.now(),
                );
 
-               if(pickdate != null){
-                setState(() {
-                  _birthdateController.text = "${pickdate.day}/${pickdate.month}/${pickdate.year}";
-                });
-               }
-            },
+              setState(() {
+                          if (pickdate != null) {
+                            _birthdateController.text = "${pickdate.day}/${pickdate.month}/${pickdate.year}";
+                          } else {
+                            _birthdateController.text = ""; // Handle null case if needed
+                          }
+                        });
+                         },
           ),
           const SizedBox(height: 15),
 
